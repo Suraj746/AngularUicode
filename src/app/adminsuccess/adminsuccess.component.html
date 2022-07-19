@@ -1,0 +1,46 @@
+<h1>Welcome to the admin panel</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Users List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Created Date</th>
+                    <th>Updated Date</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of _users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.fullName}}</td>
+                    <td>{{user.emailId}}</td>
+                    <td>{{user.status}}</td>
+                    <td>{{user.createdDate}}</td>
+                    <td>{{user.updatedDate}}</td>
+                    <td>
+                        <button (click)="deactivateUser(user.id)" class="btn btn-danger" >Deactivate</button>
+                        <button  (click)="gotoEditUser(user.id)" class="btn btn-info" style="margin-left: 10px;">Edit</button>
+
+
+
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        <button  (click)="gotoAddUser()" type="button" class="btn btn-success mb-3">Add new User</button>
+        <br>
+        <button (click)="gotoLogin()" type="button" class="btn-primary">LogOut</button>
+    </div>
+
+
+</div>
